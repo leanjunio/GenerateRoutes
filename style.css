@@ -9,3 +9,7 @@ input {
 button {
   margin: 20px auto;
 }
+
+pre {
+  font-size: 15pt;
+}
