@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Requester</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  <div class="container slogan">
+    
+    <!-- Message: Generate your API requests -->
+    <div class="jumbotron">
+      <h1>Generate your API requests here</h1>
+    </div>
+
+    <!-- forms -->
+
+    <!-- Request Endpoint -->
+    <label for="Request Method">Enter the endpoint for your request</label>
+    <div class="input-group">
+      <input id="endpoint" type="text" class="form-control" placeholder="Request URL Endpoint (i.e /api/dogs)" maxlength="30" size="50">
+    </div>
+  
+    <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+    <br>
+
+    <!-- Routes will go here -->
+    <h4>Here are your routes:</h4>
+    <code id="output"></code>
+  </div>
+
+  <!-- scripts -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+  <script src="script.js"></script>
+</body>
+</html>
