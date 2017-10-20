@@ -1,13 +1,7 @@
-// When the user clicks on submit
-
 var data = {};
-var routes = [];
 
 $('#submit').on('click', function() {
-  // Gather the data from the forms
   gather();
-
-  // Using the data, generate the RESTful routes
   generateRestRoutes();
 });
 
@@ -28,7 +22,6 @@ function generateRestRoutes() {
   
 }
 
-// Index
 function generateIndexRoute() {
   var string = `
   <pre>app.get('/${data.endpoint}', function(req, res) {
@@ -44,7 +37,7 @@ function creationRoutes(method) {
   if (method == 'get') {
     var string = 
     `<pre>app.get('/${data.endpoint}/new', function(req, res) {
-  res.send('This is the ${method} route');
+  res.send('This is a ${method} request');
 });</pre>`
     $('#output').append(string);
   
@@ -52,7 +45,7 @@ function creationRoutes(method) {
     var string = 
     `
     <pre>app.post('/${data.endpoint}', function(req, res) {
-  res.send('This is the ${method} route');
+  res.send('This is a ${method} request');
 });</pre>`
     $('#output').append(string);
   }
@@ -62,18 +55,19 @@ function showRoute() {
   var string = 
   `
   <pre>app.get('/${data.endpoint}/:id', function(req, res) {
-  res.send('This is the index route');
+  res.send('This is a get request');
 });</pre>`
   $('#output').append(string);
 }
 
+// Get edit page and point to put route
 function modifyRoutes(method) {
    // if method is get
    if (method == 'get') {
     var string = 
     `
     <pre>app.get('/${data.endpoint}/:id/edit', function(req, res) {
-  res.send('This is the ${method} route');
+  res.send('This is a ${method} request');
 });</pre>`
 
     $('#output').append(string);
@@ -82,7 +76,7 @@ function modifyRoutes(method) {
     var string = 
     `
     <pre>app.put('/${data.endpoint}/:id', function(req, res) {
-  res.send('This is the ${method} route');
+  res.send('This is a ${method} request');
 });</pre>`
     $('#output').append(string);
   }
@@ -92,7 +86,7 @@ function destroyRoute() {
   var string = 
   `
   <pre>app.delete('/${data.endpoint}/:id', function(req, res) {
-  res.send('This is the DELETE route');
+  res.send('This is a DELETE request');
 });</pre>`
   $('#output').append(string);
 }
